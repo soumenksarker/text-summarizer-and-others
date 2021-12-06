@@ -1,12 +1,13 @@
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
-nltk==3.6.5
+nltk
+os
 wordnet
-gensim==3.8.3
-joblib==1.1.0
-numpy==1.21.4
-pandas==1.3.4
+gensim
+joblib
+numpy
+pandas
 scikit-learn
-spacy==3.2.0
-streamlit==1.2.0
-sumy==0.9.0
-textblob==0.17.1
+spacy
+streamlit
+sumy
+textblob

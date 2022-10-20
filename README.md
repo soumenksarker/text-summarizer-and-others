@@ -25,7 +25,3 @@ streamlit run app.py
 #### Text Summarization with Sumy/Gensim
 ![](images/image06.png)
 
-
-#### By
-+ Jesse E.Agbe(JCharis)
-+ Jesus Saves @JCharistech

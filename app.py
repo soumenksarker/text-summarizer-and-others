@@ -1,7 +1,5 @@
 """
-## App: NLP App with Streamlit (NLPiffy)
-Author: [Jesse E.Agbe(JCharis)](https://github.com/Jcharis))\n
-Source: [Github](https://github.com/Jcharis/Streamlit_DataScience_Apps/)
+## App: NLP App with Streamlit
 Credits: Streamlit Team,Marc Skov Madsen(For Awesome-streamlit gallery)
 
 Description
@@ -13,7 +11,7 @@ This is a Natural Language Processing(NLP) Based App useful for basic NLP concep
 This is built with Streamlit Framework, an awesome framework for building ML and NLP tools.
 
 Purpose
-To perform basic and useful NLP task with Streamlit,Spacy,Textblob and Gensim/Sumy
+To perform basic and useful NLP task with Streamlit,Spacy,Textblob and Gensim
 
 """
 # Core Pkgs
@@ -25,12 +23,6 @@ import os
 from textblob import TextBlob 
 import spacy
 from gensim.summarization import summarize
-
-# Sumy Summary Pkg
-from sumy.parsers.plaintext import PlaintextParser
-from sumy.nlp.tokenizers import Tokenizer
-from sumy.summarizers.lex_rank import LexRankSummarizer
-
 
 # Function for Sumy Summarization
 def sumy_summarizer(docx):
@@ -65,8 +57,7 @@ def main():
 	""" NLP Based App with Streamlit """
 
 	# Title
-	st.title("NLPiffy with Streamlit")
-	st.subheader("Natural Language Processing On the Go..")
+	st.title("Streamlit NLP APP")
 	st.markdown("""
     	#### Description
     	+ This is a Natural Language Processing(NLP) Based App useful for basic NLP task
@@ -105,35 +96,17 @@ def main():
 	# Summarization
 	if st.checkbox("Show Text Summarization"):
 		st.subheader("Summarize Your Text")
-
 		message = st.text_area("Enter the Text","Type please ..")
-		summary_options = st.selectbox("Choose Summarizer",['sumy','gensim'])
 		if st.button("Summarize"):
-			if summary_options == 'sumy':
-				st.text("Using Sumy Summarizer ..")
-				summary_result = sumy_summarizer(message)
-			elif summary_options == 'gensim':
-				st.text("Using Gensim Summarizer ..")
-				summary_result = summarize(message)
-			else:
-				st.warning("Using Default Summarizer")
-				st.text("Using Gensim Summarizer ..")
-				summary_result = summarize(message)
-
-		
+			st.text("Using Gensim Summarizer ..")
+			summary_result = summarize(message)
 			st.success(summary_result)
 
 
-
 	st.sidebar.subheader("About App")
-	st.sidebar.text("NLPiffy App with Streamlit")
-	st.sidebar.info("Cudos to the Streamlit Team")
-	
 
 	st.sidebar.subheader("By")
-	st.sidebar.text("Jesse E.Agbe(JCharis)")
-	st.sidebar.text("Jesus saves@JCharisTech")
-	
+	st.sidebar.text("Soumen Sarker")
 
 if __name__ == '__main__':
 	main()
